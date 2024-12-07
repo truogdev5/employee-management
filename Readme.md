@@ -77,7 +77,7 @@ JWT_REFRESH_SECRET_EXPIRATION=1h
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/truongit2701/employee-management.git
+   git clone https://github.com/truogdev5/employee-management.git
    ```
 
 2. Navigate to the project directory:
