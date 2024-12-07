@@ -118,28 +118,44 @@ JWT_REFRESH_SECRET_EXPIRATION=1h
    ```bash
    docker-compose up -d
    ```
+5. Add .env file
+   ```env
+   DB_HOST=localhost
+   DB_PORT=5432
+   DB_USER=postgres
+   DB_PASSWORD=password
+   DB_NAME=postgres_employee_management
+   JWT_ACCESS_SECRET=secure-access-secret
+   JWT_REFRESH_SECRET=secure-refresh-secret
+   JWT_ACCESS_SECRET_EXPIRATION=15m
+   JWT_REFRESH_SECRET_EXPIRATION=1h
+   ```
 
-5. Run the migrations:
+6. Run the migrations:
 
    ```bash
    INSERT INTO public.users (username, fullname,"password", avatar, status, is_admin, is_logged, contract_file)   VALUES (
-    'admin',                    -- Tên đăng nhập
-    'Administrator',            -- Tên đầy đủ
-    '$2b$10$g5bmaFcOqFT9PDwCskJAdePx5HScYkySc.uvvvOfTdhDVeIh7avW6',          -- Mật khẩu đã hash (abcdef)
-    '',                         -- Avatar (để trống)
-    'active',                   -- Trạng thái (active)
-    1,                          -- Quyền admin (1 = admin)
-    1,                          -- Trạng thái đăng nhập
-    ''                          -- Tệp hợp đồng (để trống)
-);
+      'admin',                    -- Tên đăng nhập
+      'Administrator',            -- Tên đầy đủ
+      '$2b$10$g5bmaFcOqFT9PDwCskJAdePx5HScYkySc.uvvvOfTdhDVeIh7avW6',          -- Mật khẩu đã hash (abcdef)
+      '',                         -- Avatar (để trống)
+      'active',                   -- Trạng thái (active)
+      1,                          -- Quyền admin (1 = admin)
+      1,                          -- Trạng thái đăng nhập
+      ''                          -- Tệp hợp đồng (để trống)
+   );
    ```
 
-5. Start the application:
+7. Start the application:
 
-   ```bash
-   npm start
+    ```bash
+   npm install
    ```
-
+8. Login with admin account:
+   ```
+   username: admin
+   password: abcdef
+   ```
 ---
 
 ## 🚀 Features
